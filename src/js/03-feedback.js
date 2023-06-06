@@ -19,6 +19,11 @@ function OnFormInput(evt) {
    
 function OnFormSubmit(evt) {
     evt.preventDefault();
+
+    if (!feedbackFormState.email || !feedbackFormState.message) {
+        feedbackFormState.email = feedbackForm.email.value;
+    feedbackFormState.message = feedbackForm.message.value;
+    };
     console.log(feedbackFormState);
     feedbackForm.reset();
     localStorage.removeItem("feedback-form-state");
