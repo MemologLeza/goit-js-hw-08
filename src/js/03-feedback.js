@@ -6,8 +6,8 @@ const feedbackFormState = {
         message:""
 };
  onUpdatePage();
-feedbackForm.addEventListener('submit', OnFormSubmit);
-feedbackForm.addEventListener('input', throttle(OnFormInput, 500));
+ feedbackForm.addEventListener('input', throttle(OnFormInput, 500));
+ feedbackForm.addEventListener('submit', OnFormSubmit);
 
 function OnFormInput(evt) {
     
@@ -19,7 +19,7 @@ function OnFormInput(evt) {
    
 function OnFormSubmit(evt) {
     evt.preventDefault();
-   console.log(feedbackFormState);
+    console.log(feedbackFormState);
     feedbackForm.reset();
     localStorage.removeItem("feedback-form-state");
 }
@@ -36,7 +36,6 @@ function onUpdatePage() {
     if (parseSaveFeedbackFormState) {
          feedbackForm.email.value = parseSaveFeedbackFormState.email? parseSaveFeedbackFormState.email:"";
          feedbackForm.message.value = parseSaveFeedbackFormState.message? parseSaveFeedbackFormState.message:"";
-    }
-//     feedbackForm.email.value = parseSaveFeedbackFormState.email;
-//    feedbackForm.message.value = parseSaveFeedbackFormState.message;
+    };
+
 };
